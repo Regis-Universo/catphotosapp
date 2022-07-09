@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatPhotosApp</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>CatPhotoApp</h1>
@@ -11,29 +12,36 @@
         <section>
       <h2>Cat Photos</h2>
       <!-- TODO: Add link to cat photos -->
-      <p>Click here to view more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a>.</p>
-      <a href="https://freecatphotoapp.com" ><img src="img/relaxing-cat.jpg" alt="A cute orange cat lying on its back."> </a>
+      <p>Click here to view more <a  href="catphotos.html">cat photos</a>.</p>
+
+      <!--<a href="https://freecatphotoapp.com" ><img src="img/relaxing-cat.jpg" alt="A cute orange cat lying on its back."> </a> -->
+      <a href="catphotos.html" ><img src="img/relaxing-cat.jpg" alt="A cute orange cat lying on its back."> </a>
     </section>
     <section>
+        <div class="catslove">
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
         <ul>
-            <li>cat nip</li>
+            <li class="margin">cat nip</li>
             <li>laser pointers</li>
             <li>lasagna</li>
         </ul>
+        </div>
 
         <figure>
             <img src="img/lasagna.jpg" alt="A slice of lasagna on a plate.">
             <figcaption>Cats <em>love</em> lasagna.</figcaption>
         </figure>
-
+        
+        <div class="catshate">
         <h3>Top 3 things cats hate:</h3>
         <ol>
             <li>flea treatment</li>
             <li>thunder</li>
             <li>other cats</li>
-          </ol>
+        </ol>
+        </div>
+        
 
           <figure>
             <img src="img/cats.jpg" alt="Five cats looking around a field" />
@@ -70,5 +78,45 @@
 <footer>
     <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
 </footer>
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
 </body>
 </html>
